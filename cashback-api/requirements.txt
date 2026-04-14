@@ -1,5 +1,6 @@
 fastapi
 uvicorn
-sqlmodel
-python-dotenv
+sqlalchemy
 psycopg2-binary
+python-dotenv
+sqlmodel

@@ -10,7 +10,8 @@ router = APIRouter()
 @router.get("/history")
 def get_history(request: Request):
 
-    ip = request.client.host if request.client else None
+    forwarded_for = request.headers.get("X-Forwarded-For")
+    ip = forwarded_for.split(",")[0].strip() if forwarded_for else (request.client.host if request.client else None)
 
     if not ip or not is_valid_ip(ip):
         raise HTTPException(

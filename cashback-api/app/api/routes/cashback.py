@@ -33,7 +33,8 @@ def criar_cashback(data: dict, request: Request):
 
     cashback = calculate_cashback(type_client, value)
 
-    ip = request.client.host if request.client else "unknown"
+    forwarded_for = request.headers.get("X-Forwarded-For")
+    ip = forwarded_for.split(",")[0].strip() if forwarded_for else (request.client.host if request.client else "unknown")
 
     registration = Cashback(
         type_client=type_client,
