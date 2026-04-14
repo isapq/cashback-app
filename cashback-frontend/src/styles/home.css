@@ -1,0 +1,11 @@
+.logo_cashback {
+    width: 60%;
+    height: auto;
+    margin-top: 80px;
+}
+
+@media (min-width: 1000px) {
+    .logo_cashback {
+        width: 30%;
+    }
+}
