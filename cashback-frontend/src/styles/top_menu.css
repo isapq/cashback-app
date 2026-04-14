@@ -32,6 +32,7 @@
 .top-menu__item a {
     text-decoration: none;
     color: inherit;
+    white-space: nowrap;
 }
 
 .top-menu__item:hover {
